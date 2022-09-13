@@ -1,0 +1,34 @@
+<h1>Angular Fetch:</h1>
+<br>
+<app-weather-widget-main></app-weather-widget-main>
+<hr>
+<h1>Angular HTTP Client:</h1>
+<button (click)="getLocation()">GetWeatherForLondon</button>
+<!-- <div *ngFor="let post of posts | async">
+    {{ post | json }}
+</div>
+<hr>
+{{ newPost | async | json}} -->
+
+<br>
+<br>
+<br>
+
+
+<div id="divWeatherMain">
+    <div *ngIf="weather.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!weather.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-cloud fa-3x cloud"></i>
+    </div>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{weather.main.temp}}°F</div>
+    <div class="weatherWidgetRow" style="font-size: 12px">{{weather.main.temp_min}}° / {{weather.main.temp_max}}°F</div>
+    <div class="weatherWidgetRow" style="font-size: 12px">Feels like: {{weather.main.feels_like}}°F</div>
+    <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px;">{{weather.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 12px">Humidity: {{weather.main.humidity}}%</div>
+    <div class="weatherWidgetRow" style="font-size: 12px">Pressure: {{weather.main.pressure}} hPa</div>
+</div>
